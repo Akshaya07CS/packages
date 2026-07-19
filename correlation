@@ -1,0 +1,16 @@
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.array([5, 7, 8, 7, 10, 15, 20, 25])
+y = np.array([5, 8, 7, 10, 15, 20, 25, 30])
+correlation = np.corrcoef(x, y)[0, 1]
+print("Correlation Coefficient =", correlation)
+m, c = np.polyfit(x, y, 1)   # slope (m) and intercept (c)
+print("Regression Line: y =", m, "x +", c)
+plt.scatter(x, y, color='blue', label='Data Points')
+plt.plot(x, m*x + c, color='red', label='Regression Line')
+plt.xlabel("X values")
+plt.ylabel("Y values")
+plt.title("Correlation & Regression using NumPy")
+plt.legend()
+plt.grid(True)
+plt.show()
